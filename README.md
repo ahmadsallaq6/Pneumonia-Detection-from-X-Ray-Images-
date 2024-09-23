@@ -13,6 +13,8 @@ Pneumonia is a serious respiratory infection, especially in children. Early dete
 * Precision: 0.8235
 * F1 Score: 0.8750
 
+![Local Image](conf%20matrix.png)
+
 The model excels in predicting pneumonia cases, demonstrating strong capability in identifying true positives, which is crucial in medical diagnoses.
 
 # Dataset
@@ -32,8 +34,9 @@ The model excels in predicting pneumonia cases, demonstrating strong capability 
 
 # Model Architecture
 
-The model was built using a pre-trained ResNet50 architecture, fine-tuned for binary classification (Pneumonia vs. Normal). The model was trained using the following techniques:
+The model was built using a pre-trained ResNet50 architecture, and I fine-tuned the top 10 layers for better performance on the pneumonia detection task. This allowed the model to learn more specific features from the dataset while still leveraging the strength of the pre-trained layers. The model was trained using the following techniques:
 
+* Fine-tuned 10 layers: The top 10 layers of the ResNet50 model were unfrozen and retrained to adapt to the pneumonia detection task.
 * Data Augmentation: To improve model robustness.
 * Binary Crossentropy Loss: Optimized using the Adam optimizer.
 * Recall focus: High priority was given to improving the recall to ensure accurate identification of pneumonia cases.
@@ -41,6 +44,8 @@ The model was built using a pre-trained ResNet50 architecture, fine-tuned for bi
 # Performance & Evaluation
 
 While the model achieved a reasonable overall accuracy of 82.8%, it particularly excelled in identifying pneumonia cases, achieving a recall of 93.33%. This high recall indicates the model's strong ability to predict true positive cases, reducing the risk of missed diagnoses in pneumonia patients.
+
+![Local Image](download%20(3).png)
 
 # Environment & Tools
 
