@@ -9,7 +9,9 @@ Pneumonia is a serious respiratory infection, especially in children. Early dete
 # Key Model Performance Metrics:
 
 * Accuracy: 82.8%
-* Recall for Pneumonia Detection: 93.33%
+* Recall: 93.33%
+* Precision: 0.8235
+* F1 Score: 0.8750
 
 The model excels in predicting pneumonia cases, demonstrating strong capability in identifying true positives, which is crucial in medical diagnoses.
 
