@@ -48,9 +48,21 @@ While the model achieved a reasonable overall accuracy of 82.8%, it particularly
 ![Local Image](download%20(3).png)
 
 # Environment & Tools
+The following libraries and frameworks were used in this project:
 
-Kaggle Notebook: The code was executed on Kaggle using their GPU accelerators for faster training and inference times.
-Libraries used: TensorFlow, Keras, OpenCV, and others.
+* NumPy: For efficient numerical operations.
+* OS: To handle file and directory operations.
+* TensorFlow & Keras: For building and training the deep learning model.
+  * ResNet50: Pre-trained model architecture used as the base.
+  * ImageDataGenerator: For data augmentation and preprocessing.
+  * GlobalAveragePooling2D and Dense: Layers added to the model.
+  * Adam: Optimizer used for training.
+  * ReduceLROnPlateau: Callback to reduce learning rate during training.
+  * Dropout: Regularization to prevent overfitting.
+* Matplotlib & Seaborn: For visualizing training history and performance metrics.
+* Scikit-learn: For calculating the confusion matrix, classification report, precision, recall, and F1-score.
+
+The model was trained in Kaggle Notebook using a P100 GPU, which provided the necessary computational power to handle the deep learning tasks efficiently.
 
 # Conclusion
 
