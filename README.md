@@ -8,10 +8,10 @@ Pneumonia is a serious respiratory infection, especially in children. Early dete
 
 # Key Model Performance Metrics:
 
-* Accuracy: 82.8%
+* Accuracy: 82.89%
 * Recall: 93.33%
-* Precision: 0.8235
-* F1 Score: 0.8750
+* Precision: 82.35%
+* F1 Score: 87.50%
 
 ![Local Image](conf%20matrix.png)
 
