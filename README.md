@@ -1,69 +1,124 @@
-# Pneumonia Detection from X-Ray Images
+# Pneumonia Detection Using Deep Learning Models
 
-This project aims to detect pneumonia from chest X-ray images using a deep learning model based on the ResNet50 architecture. The model was trained and fine-tuned on a dataset of pediatric chest X-rays, achieving notable performance in detecting pneumonia cases.
+This project uses several deep learning architectures to classify chest X-ray images as either "Pneumonia" or "Normal." The models fine-tuned in this project include VGG16, ResNet50, EfficientNetB0, InceptionV3, and Xception.
 
-# Project Overview
+## Table of Contents
+- [Introduction](#introduction)
+- [Models](#models)
+- [Dataset](#dataset)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Results](#results)
+- [Future Work](#future-work)
+- [License](#license)
 
-Pneumonia is a serious respiratory infection, especially in children. Early detection of pneumonia is critical for proper medical care and can significantly improve patient outcomes. This model focuses on identifying pneumonia in pediatric chest X-ray images with high recall, ensuring the identification of true positive cases.
+## Introduction
+Pneumonia is one of the major causes of death worldwide, particularly in children and the elderly. Early detection can lead to better treatment outcomes. In this project, we leverage state-of-the-art CNN models pre-trained on ImageNet to detect pneumonia from chest X-ray images.
 
-# Key Model Performance Metrics:
+## Models
+The following pre-trained models were used in this project and fine-tuned for pneumonia detection:
+- **VGG16**
+- **ResNet50**
+- **EfficientNetB0**
+- **InceptionV3**
+- **Xception**
 
-* Accuracy: 82.89%
-* Recall: 93.33%
-* Precision: 82.35%
-* F1 Score: 87.50%
+Each model was evaluated based on accuracy, precision, recall, F1 score, and AUC.
 
-![Local Image](conf%20matrix.png)
+## Dataset
+The dataset used in this project is the publicly available Chest X-ray dataset from Guangzhou Women and Children’s Medical Center. It contains 5,863 labeled images, categorized into two classes: "Pneumonia" and "Normal." The dataset is split into three sets:
+- **Training set**: 5,216 images
+- **Validation set**: 16 images
+- **Test set**: 624 images
 
-The model excels in predicting pneumonia cases, demonstrating strong capability in identifying true positives, which is crucial in medical diagnoses.
+## Training
+To fine-tune the models, various hyperparameters such as learning rate, optimizer, and batch size were used. The models were trained using a combination of data augmentation techniques, and early stopping was employed to prevent overfitting.
 
-# Dataset
+## Evaluation
+The models were evaluated using the following metrics:
+- **Accuracy**: The proportion of correctly classified samples.
+- **Precision**: The proportion of true positive samples among all positive predictions.
+- **Recall**: The proportion of true positives correctly identified.
+- **F1 Score**: The harmonic mean of precision and recall.
+- **AUC (Area Under Curve)**: The ROC curve was used to assess the models' performance.
 
-**Chest X-Ray Images (Pneumonia) dataset was used, containing:**
+## Results
+The following table summarizes the performance metrics of each model:
 
-* 5,863 chest X-ray images (JPEG format)
-* 2 categories: Pneumonia and Normal
-* Images are organized into train, test, and validation folders
-* Dataset link: [Chest X-ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+| Model           | Accuracy | Precision | Recall  | F1 Score | AUC    |
+|-----------------|----------|-----------|---------|----------|--------|
+| VGG16           | 91.51%   | 0.9201    | 0.9846  | 0.9504   | 0.9788 |
+| ResNet50        | 90.80%   | 0.8238    | 0.9949  | 0.9010   | 0.9697 |
+| EfficientNetB0  | 86.91%   | 0.8651    | 0.8718  | 0.8685   | 0.9102 |
+| InceptionV3     | 89.34%   | 0.8791    | 0.9347  | 0.9059   | 0.9635 |
+| Xception        | 90.02%   | 0.8823    | 0.9554  | 0.9175   | 0.9685 |
 
-# Dataset Details:
+## Future Work
+- Explore more advanced models such as Vision Transformers (ViT) for better performance.
+- Fine-tune the models with additional data and evaluate their robustness in different datasets.
+- Incorporate explainability techniques (like Grad-CAM) to visualize the areas in the images the model is focusing on.
 
-* Images were collected from pediatric patients (aged 1-5 years) at Guangzhou Women and Children’s Medical Center, China.
-* The dataset consists of anterior-posterior chest X-ray images.
-* Images were screened for quality, with two expert physicians grading the diagnoses, and a third expert checked the evaluation set for quality assurance.
+# Pneumonia Detection Using Deep Learning Models
 
-# Model Architecture
+This project uses several deep learning architectures to classify chest X-ray images as either "Pneumonia" or "Normal." The models fine-tuned in this project include VGG16, ResNet50, EfficientNetB0, InceptionV3, and Xception.
 
-The model was built using a pre-trained ResNet50 architecture, and I fine-tuned the top 10 layers for better performance on the pneumonia detection task. This allowed the model to learn more specific features from the dataset while still leveraging the strength of the pre-trained layers. The model was trained using the following techniques:
+## Table of Contents
+- [Introduction](#introduction)
+- [Models](#models)
+- [Dataset](#dataset)
+- [Installation](#installation)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Results](#results)
+- [Future Work](#future-work)
+- [License](#license)
 
-* Fine-tuned 10 layers: The top 10 layers of the ResNet50 model were unfrozen and retrained to adapt to the pneumonia detection task.
-* Data Augmentation: To improve model robustness.
-* Binary Crossentropy Loss: Optimized using the Adam optimizer.
-* Recall focus: High priority was given to improving the recall to ensure accurate identification of pneumonia cases.
+## Introduction
+Pneumonia is one of the major causes of death worldwide, particularly in children and the elderly. Early detection can lead to better treatment outcomes. In this project, we leverage state-of-the-art CNN models pre-trained on ImageNet to detect pneumonia from chest X-ray images.
 
-# Performance & Evaluation
+## Models
+The following pre-trained models were used in this project and fine-tuned for pneumonia detection:
+- **VGG16**
+- **ResNet50**
+- **EfficientNetB0**
+- **InceptionV3**
+- **Xception**
 
-While the model achieved a reasonable overall accuracy of 82.8%, it particularly excelled in identifying pneumonia cases, achieving a recall of 93.33%. This high recall indicates the model's strong ability to predict true positive cases, reducing the risk of missed diagnoses in pneumonia patients.
+Each model was evaluated based on accuracy, precision, recall, F1 score, and AUC.
 
-![Local Image](download%20(3).png)
+## Dataset
+The dataset used in this project is the publicly available Chest X-ray dataset from Guangzhou Women and Children’s Medical Center. It contains 5,863 labeled images, categorized into two classes: "Pneumonia" and "Normal." The dataset is split into three sets:
+- **Training set**: 5,216 images
+- **Validation set**: 16 images
+- **Test set**: 624 images
 
-# Environment & Tools
-The following libraries and frameworks were used in this project:
+## Training
+To fine-tune the models, various hyperparameters such as learning rate, optimizer, and batch size were used. The models were trained using a combination of data augmentation techniques, and early stopping was employed to prevent overfitting.
 
-* NumPy: For efficient numerical operations.
-* OS: To handle file and directory operations.
-* TensorFlow & Keras: For building and training the deep learning model.
-  * ResNet50: Pre-trained model architecture used as the base.
-  * ImageDataGenerator: For data augmentation and preprocessing.
-  * GlobalAveragePooling2D and Dense: Layers added to the model.
-  * Adam: Optimizer used for training.
-  * ReduceLROnPlateau: Callback to reduce learning rate during training.
-  * Dropout: Regularization to prevent overfitting.
-* Matplotlib & Seaborn: For visualizing training history and performance metrics.
-* Scikit-learn: For calculating the confusion matrix, classification report, precision, recall, and F1-score.
+## Evaluation
+The models were evaluated using the following metrics:
+- **Accuracy**: The proportion of correctly classified samples.
+- **Precision**: The proportion of true positive samples among all positive predictions.
+- **Recall**: The proportion of true positives correctly identified.
+- **F1 Score**: The harmonic mean of precision and recall.
+- **AUC (Area Under Curve)**: The ROC curve was used to assess the models' performance.
 
-The model was trained in Kaggle Notebook using a P100 GPU, which provided the necessary computational power to handle the deep learning tasks efficiently.
+## Results
+The following table summarizes the performance metrics of each model:
 
-# Conclusion
+| Model           | Accuracy | Precision | Recall  | F1 Score | AUC    |
+|-----------------|----------|-----------|---------|----------|--------|
+| VGG16           | 91.51%   | 0.9201    | 0.9846  | 0.9504   | 0.9788 |
+| ResNet50        | 90.80%   | 0.8238    | 0.9949  | 0.9010   | 0.9697 |
+| EfficientNetB0  | 86.91%   | 0.8651    | 0.8718  | 0.8685   | 0.9102 |
+| InceptionV3     | 89.34%   | 0.8791    | 0.9347  | 0.9059   | 0.9635 |
+| Xception        | 90.02%   | 0.8823    | 0.9554  | 0.9175   | 0.9685 |
 
-This project provides an accurate and reliable model for detecting pneumonia in pediatric chest X-rays, with a strong focus on recall to ensure true positive identification. It can be further extended to include more diverse datasets and enhanced feature extraction techniques.
+## Future Work
+- Explore more advanced models such as Vision Transformers (ViT) for better performance.
+- Fine-tune the models with additional data and evaluate their robustness in different datasets.
+- Incorporate explainability techniques (like Grad-CAM) to visualize the areas in the images the model is focusing on.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
