@@ -32,7 +32,7 @@ The dataset used in this project is the publicly available Chest X-ray dataset f
 - **Test set**: 624 images
 
 ## Training
-To fine-tune the models, various hyperparameters such as learning rate, optimizer, and batch size were used. The models were trained using a combination of data augmentation techniques, and early stopping was employed to prevent overfitting.
+To fine-tune the models, various hyperparameters such as learning rate (0.00001), optimizer, and batch size of 32 were used. The models were trained using a combination of data augmentation techniques.
 
 ## Evaluation
 The models were evaluated using the following metrics:
